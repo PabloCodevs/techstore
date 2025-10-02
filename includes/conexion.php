@@ -1,10 +1,10 @@
 <?php
-$host = "localhost";
+$host = "localhost/phpmyadmin";
 $usuario = "root";
 $password = "";
 $base_datos = "techstore";
 
-// Crear conexión
+// Crear conexión a la base de datos
 $conn = new mysqli($host, $usuario, $password, $base_datos);
 
 // Verificar conexión
