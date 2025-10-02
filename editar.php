@@ -4,17 +4,15 @@ include 'includes/conexion.php';
 
 // Recibir el ID del producto por GET
 if (!isset($_GET['id'])) {
-    // Si no hay id en la URL, volvemos al index
     header('Location: index.php');
     exit;
 }
 
-$id = $_GET['id'];
+$id = (int) $_GET['id'];
 
 // Obtener los datos actuales del producto
 $sql = "SELECT * FROM productos WHERE id = $id";
 $resultado = $conn->query($sql);
-
 
 if ($resultado->num_rows == 0) {
     echo "Producto no encontrado.";
@@ -22,6 +20,7 @@ if ($resultado->num_rows == 0) {
     exit;
 }
 
+$fila = $resultado->fetch_assoc(); // ✅ ahora sí tenemos los datos del producto
 
 // Procesar el formulario al enviarlo
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -30,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $precio = $_POST['precio'];
     $cantidad = $_POST['cantidad'];
 
-    // Validar los datos
     if (!empty($nombre) && !empty($descripcion) && $precio > 0 && $cantidad >= 0) {
         $sql_update = "UPDATE productos SET
             nombre = '$nombre',
@@ -39,13 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             cantidad = $cantidad
             WHERE id = $id";
 
-            if ($conn->query($sql_update) == TRUE) {
-                // Redirigir al index después de la actualización
-                header('Location: index.php');
-                exit;
-            } else {
-                echo "<p></p>Error al actualizar el producto: " . $conn->error . "</p>";
-            }
+        if ($conn->query($sql_update) === TRUE) {
+            header('Location: index.php');
+            exit;
+        } else {
+            echo "<p>Error al actualizar el producto: " . $conn->error . "</p>";
+        }
     } else {
         echo "<p>Por favor, completa todos los campos correctamente.</p>";
     }
