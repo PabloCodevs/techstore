@@ -12,6 +12,7 @@ include 'includes/conexion.php';
             <th>Descripción</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <th>Acciones</th>
         </tr>
         <?php
         $sql = "SELECT * FROM productos";
@@ -23,12 +24,16 @@ include 'includes/conexion.php';
                         <td>{$fila['id']}</td>
                         <td>{$fila['nombre']}</td>
                         <td>{$fila['descripcion']}</td>
-                        <td>{$fila['precio']}</td>
+                        <td>{$fila['precio']} €</td>
                         <td>{$fila['cantidad']}</td>
+                        <td>
+                            <a href='editar.php?id={$fila['id']}'>Editar</a> |
+                            <a href='borrar.php?id={$fila['id']}'>Borrar</a>
+                        </td>
                       </tr>";
             }
         } else {
-            echo "<tr><td colspan='5'>No hay productos</td></tr>";
+            echo "<tr><td colspan='6'>No hay productos</td></tr>";
         }
         ?>
     </table>
