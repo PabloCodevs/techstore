@@ -1,6 +1,6 @@
     <hr>
     <footer>
-        <p>TechStore &copy; 2025</p>
+        <p>TechStore</p>
     </footer>
 </body>
 </html>
