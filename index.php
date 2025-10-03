@@ -5,15 +5,18 @@ include 'includes/conexion.php';
 
 <main>
     <h2>Lista de Productos</h2>
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-        </tr>
+    <div class="div-table">
+        <table class="hola" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+    </div>
+
         <?php
         $sql = "SELECT * FROM productos";
         $resultado = $conn->query($sql);
@@ -27,7 +30,7 @@ include 'includes/conexion.php';
                     <td>{$fila['precio']} €</td>
                     <td>{$fila['cantidad']}</td>
                     <td>
-                        <a href='editar.php?id={$fila['id']}'>Editar</a> |
+                        <a href='editar.php?id={$fila['id']}'>Editar</></a> |
                         <a href='borrar.php?id={$fila['id']}' onclick='return confirm(\"¿Seguro que quieres eliminar este producto?\");'>Borrar</a>
                     </td>
                 </tr>";

@@ -58,6 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     ?>
 
+    
+
     <form action="agregar.php" method="POST">
         <label for="nombre">Nombre del producto:</label><br>
         <input type="text" id="nombre" name="nombre" required><br><br>
