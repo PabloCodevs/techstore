@@ -21,16 +21,16 @@ include 'includes/conexion.php';
         if ($resultado->num_rows > 0) {
             while($fila = $resultado->fetch_assoc()) {
                 echo "<tr>
-                        <td>{$fila['id']}</td>
-                        <td>{$fila['nombre']}</td>
-                        <td>{$fila['descripcion']}</td>
-                        <td>{$fila['precio']} €</td>
-                        <td>{$fila['cantidad']}</td>
-                        <td>
-                            <a href='editar.php?id={$fila['id']}'>Editar</a> |
-                            <a href='borrar.php?id={$fila['id']}'>Borrar</a>
-                        </td>
-                      </tr>";
+                    <td>{$fila['id']}</td>
+                    <td>{$fila['nombre']}</td>
+                    <td>{$fila['descripcion']}</td>
+                    <td>{$fila['precio']} €</td>
+                    <td>{$fila['cantidad']}</td>
+                    <td>
+                        <a href='editar.php?id={$fila['id']}'>Editar</a> |
+                        <a href='borrar.php?id={$fila['id']}' onclick='return confirm(\"¿Seguro que quieres eliminar este producto?\");'>Borrar</a>
+                    </td>
+                </tr>";
             }
         } else {
             echo "<tr><td colspan='6'>No hay productos</td></tr>";
