@@ -58,11 +58,56 @@ main {
   border-spacing: 0 10px; /* 10px de espacio entre filas */
   width: 100%;
   background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 25px;
 }
 
 .hola th,
 .hola td {
   padding: 10px;
-  text-align: left; /* opcional, para que se vea el espacio */
+  text-align: left;
   border-bottom: 1px solid #ddd;
+}
+
+.hola tr:last-child td {
+  border-bottom: none;
+}
+
+.btn-editar {
+  background: #989898;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-editar:hover {
+  background: #0056b3;
+}
+
+.btn-borrar {
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-borrar:hover {
+  background: darkred;
+}
+
+.btn-agregar {
+  background: rgb(238, 142, 8);
+  color: white;
+  padding: 10px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-agregar:hover {
+  background: rgb(140, 85, 8);
 }

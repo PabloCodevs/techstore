@@ -20,7 +20,7 @@ if ($resultado->num_rows == 0) {
     exit;
 }
 
-$fila = $resultado->fetch_assoc(); // ✅ ahora sí tenemos los datos del producto
+$fila = $resultado->fetch_assoc(); // Datos actuales del producto
 
 // Procesar el formulario al enviarlo
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

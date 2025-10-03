@@ -4,7 +4,9 @@ include 'includes/conexion.php';
 ?>
 
 <main>
-    <h2>Lista de Productos</h2>
+    <h2>Gestor de Productos</h2>           
+    <a class='btn-agregar' href="agregar.php">Agregar Producto</a>
+
     <div class="div-table">
         <table class="hola" cellpadding="10">
             <tr>
@@ -30,8 +32,8 @@ include 'includes/conexion.php';
                     <td>{$fila['precio']} €</td>
                     <td>{$fila['cantidad']}</td>
                     <td>
-                        <a href='editar.php?id={$fila['id']}'>Editar</></a> |
-                        <a href='borrar.php?id={$fila['id']}' onclick='return confirm(\"¿Seguro que quieres eliminar este producto?\");'>Borrar</a>
+                        <a class='btn-editar' href='editar.php?id={$fila['id']}'>Editar</a>  
+                        <a class='btn-borrar' href='borrar.php?id={$fila['id']}' onclick='return confirm(\"¿Seguro que quieres eliminar este producto?\");'>Borrar</a>
                     </td>
                 </tr>";
             }

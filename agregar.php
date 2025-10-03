@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$nombre', $precio, $cantidad, '$descripcion')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "<p>Producto añadido exitosamente.</p>";
+            echo "<p>El producto se añadió correctamente.</p>";
             header("refresh:2; url=index.php");
             exit();
         } else {

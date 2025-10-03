@@ -11,7 +11,6 @@
         <h1>TechStore - Gestión de Productos</h1>
         <nav>
             <a href="index.php">Inicio</a> 
-            <a href="agregar.php">Agregar Producto</a>
         </nav>
     </header>
     <hr>
